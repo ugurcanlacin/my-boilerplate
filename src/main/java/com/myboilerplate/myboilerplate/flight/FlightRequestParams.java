@@ -6,6 +6,6 @@ import lombok.Data;
 public class FlightRequestParams {
     private String sort;
     private String fields;
-    private String page;
-    private String perPage;
+    private Integer page;
+    private Integer perPage;
 }

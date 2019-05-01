@@ -22,9 +22,13 @@ public class FlightController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity getAllFlights(FlightRequestParams flightRequestParams){
         String fields = flightRequestParams.getFields();
-        String page = flightRequestParams.getPage();
-        String perPage = flightRequestParams.getPerPage();
+        Integer page = flightRequestParams.getPage();
+        Integer perPage = flightRequestParams.getPerPage();
         String sort = flightRequestParams.getSort();
+
+        if (page == 1){
+            throw new NumberFormatException();
+        }
         return new ResponseEntity<>(flightService.getFlights(), HttpStatus.OK);
     }
 
