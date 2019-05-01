@@ -34,4 +34,8 @@ public class FlightService {
     public List<Flight> getFlights(){
         return this.flights;
     }
+
+    public void addFlight(Flight flight) {
+        this.flights.add(flight);
+    }
 }
