@@ -17,9 +17,9 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 
         CustomErrorResponse errors = new CustomErrorResponse();
         errors.setTimestamp(LocalDateTime.now());
-        errors.setError("Wrong number!");
-        errors.setStatus(HttpStatus.BAD_REQUEST.value());
+        errors.setMessage("Wrong number!");
+        errors.setStatus(HttpStatus.FORBIDDEN.value());
 
-        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errors, HttpStatus.FORBIDDEN);
     }
 }

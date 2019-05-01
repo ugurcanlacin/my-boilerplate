@@ -26,7 +26,7 @@ public class FlightController {
         Integer perPage = flightRequestParams.getPerPage();
         String sort = flightRequestParams.getSort();
 
-        if (page == 1){
+        if (page != null && page == 1){
             throw new NumberFormatException();
         }
         return new ResponseEntity<>(flightService.getFlights(), HttpStatus.OK);
